@@ -4,11 +4,16 @@
 # and re-run the script.
 from collections import Counter
 
-buckets = [ ('john.doe@example.com',{'first_name':'john','last_name':'doe'}),
-            ('jane.doe@example.com',{'first_name':'jane','last_name':'doe'}),
-            ('derek.zoo@example.com',{'first_name':'derek','last_name':'zoolander'}),
-            ('murph.cooper@example.com',{'first_name':'murph','last_name':'cooper'}),
-            ('ned.stark@example.com',{'first_name':'ned','last_name':'stark'})
+buckets = [ ('john.doe@example.com',
+             {'first_name':'john','last_name':'doe'}),
+            ('jane.doe@example.com',
+             {'first_name':'jane','last_name':'doe'}),
+            ('derek.zoo@example.com',
+             {'first_name':'derek','last_name':'zoolander'}),
+            ('murph.cooper@example.com',
+             {'first_name':'murph','last_name':'cooper'}),
+            ('ned.stark@example.com',
+             {'first_name':'ned','last_name':'stark'})
             ]
 
 # Question 1: Create a function that returns all last names in the list
@@ -19,7 +24,11 @@ def get_last_name_count(list_of_records):
     fill in docstring
     """
     ## Write code below ##
-    pass
+    list_of_lastnames = []
+    for item in list_of_records:
+        email, full_name = item
+        list_of_lastnames.append(full_name['last_name'])
+    return Counter(list_of_lastnames)
     ## end of function ##
 
 
