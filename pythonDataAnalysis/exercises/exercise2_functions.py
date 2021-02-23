@@ -40,7 +40,11 @@ def compare_full_name(list_of_records, email, first_name, last_name):
     fill in docstring
     """
     ## Write code below ##
-    pass
+    for item in list_of_records:
+        record_email, full_name = item
+        if email == record_email:
+            return first_name == full_name['first_name'] and last_name == full_name['last_name']
+        return False
     ## end of function ##
 
 # (CHALLENGE) Question 3: Create a function that can reset the value for first_name
@@ -54,7 +58,16 @@ def update_record(list_of_records, email, first_name, last_name):
     fill in docstring
     """
     ## Write code below ##
-    pass
+    found_email = False
+    for index, record in enumerate(list_of_records):
+        record_email, full_name = record
+        if record_email == email:
+            found_email = True
+            break
+        if found_email:
+            list_of_records[index] = (email,{'first_name':first_name,'last_name':last_name})
+        else:
+            list_of_records.append((email,{'first_name':first_name,'last_name':last_name}))
     ## end of function ##
 
 def divider():
