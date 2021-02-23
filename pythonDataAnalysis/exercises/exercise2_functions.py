@@ -78,8 +78,8 @@ def divider():
 print("The last names and their counts are as follows:")
 result = get_last_name_count(buckets)
 # un-comment the code below once your get_last_name_count function works
-# for k, v in result.items():
-#     print(f"{k}: {v}")
+for k, v in result.items():
+    print(f"{k}: {v}")
 divider()
 
 print("Does ned's first and last name match our records?")
@@ -97,8 +97,8 @@ divider()
 print("Updated last names and their count are as follows:")
 result = get_last_name_count(buckets)
 # un-comment the code below once your get_last_name_count function works
-# for k, v in result.items():
-#     print(f"{k}: {v}")
+for k, v in result.items():
+    print(f"{k}: {v}")
 divider()
 
 print("Full list")
