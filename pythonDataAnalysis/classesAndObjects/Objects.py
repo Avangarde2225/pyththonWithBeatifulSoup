@@ -20,6 +20,17 @@ class Student:
         else:
             print(f"{course} is not found")
 
+    def __len__(self):
+        return len(self.courses)
+
+    def __repr__(self):
+        return f"Student('{self.first_name}', '{self.last_name}', '{self.courses}')"
+
+    def __str__(self):
+        return f"First Name : {self.first_name.capitalize()}\nLast Name: {self.last_name.capitalize()}\nCourses: {', '.join(map(str.capitalize,self.courses))}"
+
+
+
 courses1 = ['python', 'rails', 'java']
 courses2 = ['java', 'c' , 'django']
 mashsur = Student("mashur", "husain", courses1)
@@ -37,3 +48,9 @@ john.remove_course("c")
 john.remove_course("c")
 john.remove_course("python")
 print(john.courses)
+
+print("-" * 40)
+print(mashsur)
+print(john)
+print(len(mashsur))
+print(repr(mashsur))
