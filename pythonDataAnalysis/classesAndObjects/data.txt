@@ -1,0 +1,4 @@
+mashur,hosain:python,ruby,javascript
+john,doe:java,c,c++
+evengy,rahman:ruby,rails,javascript
+john,schome:python, java, jugo

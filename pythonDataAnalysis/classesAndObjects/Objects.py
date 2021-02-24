@@ -36,21 +36,22 @@ courses2 = ['java', 'c' , 'django']
 mashsur = Student("mashur", "husain", courses1)
 john = Student('john', 'Doe', courses2)
 
-print(mashsur.first_name, mashsur.last_name, mashsur.courses)
-print(john.first_name, john.last_name, john.courses)
+# print(mashsur.first_name, mashsur.last_name, mashsur.courses)
+# print(john.first_name, john.last_name, john.courses)
 
-mashsur.add_course('java')
-print(mashsur.courses)
-mashsur.add_course('c#')
-print(mashsur.courses)
-
-john.remove_course("c")
-john.remove_course("c")
-john.remove_course("python")
-print(john.courses)
+# mashsur.add_course('java')
+# print(mashsur.courses)
+# mashsur.add_course('c#')
+# print(mashsur.courses)
+#
+# john.remove_course("c")
+# john.remove_course("c")
+# john.remove_course("python")
+# print(john.courses)
 
 print("-" * 40)
 print(mashsur)
 print(john)
-print(len(mashsur))
-print(repr(mashsur))
+# print(len(mashsur))
+# print(repr(mashsur))
+
