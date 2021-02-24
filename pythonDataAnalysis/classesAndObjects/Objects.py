@@ -1,3 +1,6 @@
+
+
+
 class Student:
 
     def __init__(self,first_name, last_name, courses=None):
@@ -19,6 +22,30 @@ class Student:
             self.courses.remove(course)
         else:
             print(f"{course} is not found")
+
+    def find_in_file(self,filename):
+        with open(filename) as f:
+            for line in f:
+                first_name, last_name, course_details = Student.prep_record(line.strip())
+                student_read_in = Student(first_name, last_name,course_details)
+                if self == student_read_in:
+                    return True
+                else:
+                    return False
+
+    def add_to_file(self, filename):
+        if self.find_in_file(filename):
+            return "Record already exists"
+
+    @staticmethod
+    def prep_record(line):
+        line = line.split(":")
+        first_name, last_name = line[0].split(",")
+        course_details = line[1].rstrip().split(",")
+        return first_name, last_name, course_details
+
+    def __eq__(self, other):
+        self.first_name == other.first_name and self.last_name == other.last_name
 
     def __len__(self):
         return len(self.courses)
@@ -54,4 +81,7 @@ print(mashsur)
 print(john)
 # print(len(mashsur))
 # print(repr(mashsur))
-
+file_name = "data.txt"
+mashur = Student('mashur','hosain',['python','ruby','javascript'])
+print(mashur.find_in_file(file_name))
+print(mashur.add_to_file(file_name))
