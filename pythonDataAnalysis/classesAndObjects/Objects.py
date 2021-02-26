@@ -36,13 +36,23 @@ class Student:
     def add_to_file(self, filename):
         if self.find_in_file(filename):
             return "Record already exists"
-
+        else:
+            record_to_add = Student.prep_to_write(self.first_name, self.last_name, self.courses)
+            with open(filename,"a+") as to_write:    #"w" will write to a new file and delete the prior entires
+                to_write.write(record_to_add+"\n")
+            return "Record Added Succesfully"
     @staticmethod
     def prep_record(line):
         line = line.split(":")
         first_name, last_name = line[0].split(",")
         course_details = line[1].rstrip().split(",")
         return first_name, last_name, course_details
+
+    @staticmethod
+    def prep_to_write(first_name, last_name, courses):
+        full_name = first_name+','+ last_name
+        courses = ','.join(courses)
+        return full_name +':'+courses
 
     def __eq__(self, other):
         self.first_name == other.first_name and self.last_name == other.last_name
@@ -58,9 +68,9 @@ class Student:
 
 
 
-courses1 = ['python', 'rails', 'java']
+courses1 = ['python', 'ruby', 'javascript']
 courses2 = ['java', 'c' , 'django']
-mashsur = Student("mashur", "husain", courses1)
+mashsur = Student("mashur", "hosain", courses1)
 john = Student('john', 'Doe', courses2)
 
 # print(mashsur.first_name, mashsur.last_name, mashsur.courses)
@@ -82,6 +92,10 @@ print(john)
 # print(len(mashsur))
 # print(repr(mashsur))
 file_name = "data.txt"
-mashur = Student('mashur','hosain',['python','ruby','javascript'])
+mashur = Student('mashur', 'hossain', ["python", "ruby", "javascript"])
 print(mashur.find_in_file(file_name))
 print(mashur.add_to_file(file_name))
+
+Joe = Student("Joe", "Shumack", ['JAva', 'Hava', 'Mava'])
+print(Joe.find_in_file(file_name))
+print(Joe.add_to_file(file_name))
