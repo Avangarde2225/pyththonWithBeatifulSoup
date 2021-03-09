@@ -52,7 +52,7 @@ class Student:
     def prep_to_write(first_name, last_name, courses):
         full_name = first_name+','+ last_name
         courses = ','.join(courses)
-        return full_name +':'+courses
+        return full_name +':'+ courses
 
     def __eq__(self, other):
         self.first_name == other.first_name and self.last_name == other.last_name
@@ -68,10 +68,10 @@ class Student:
 
 
 
-courses1 = ['python', 'ruby', 'javascript']
-courses2 = ['java', 'c' , 'django']
-mashsur = Student("mashur", "hosain", courses1)
-john = Student('john', 'Doe', courses2)
+# courses1 = ['python', 'ruby', 'javascript']
+# courses2 = ['java', 'c' , 'django']
+# mashsur = Student("mashur", "hosain", courses1)
+# john = Student('john', 'Doe', courses2)
 
 # print(mashsur.first_name, mashsur.last_name, mashsur.courses)
 # print(john.first_name, john.last_name, john.courses)
@@ -87,12 +87,12 @@ john = Student('john', 'Doe', courses2)
 # print(john.courses)
 
 print("-" * 40)
-print(mashsur)
-print(john)
+# print(mashsur)
+# print(john)
 # print(len(mashsur))
 # print(repr(mashsur))
 file_name = "data.txt"
-mashur = Student('mashur', 'hossain', ["python", "ruby", "javascript"])
+mashur = Student("mashur", "hossain", ["python", "ruby", "javascript"])
 print(mashur.find_in_file(file_name))
 print(mashur.add_to_file(file_name))
 
