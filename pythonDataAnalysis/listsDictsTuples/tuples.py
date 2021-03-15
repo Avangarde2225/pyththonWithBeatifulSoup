@@ -12,3 +12,7 @@ print(my_random_tuple.index(5))
 
 first_var, second_var, third_var = my_tuple
 print(first_var)
+
+two_tuples= my_tuple + my_random_tuple
+print(two_tuples)
+print(len(two_tuples))
